@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Item Finder</h1>
+
+  <form>
+    <div class="form-group">
+      <input type="text" name="item-name" class="form-group" #itemName placeholder="Search Items">
+    </div>
+    <button (click)="getItemDetails(itemName.value)" type="submit" class="btn btn-primary">Search</button>
+  </form>
+  
+
+  <div class="col-sm-8">
+      <div>
+        <div *ngIf="itemData">
+          <h2>Name: {{itemData.name}}</h2>
+          <h4>Description: {{itemData.description}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
