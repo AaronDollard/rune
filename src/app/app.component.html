@@ -7,14 +7,11 @@
     </div>
     <button (click)="getItemDetails(itemName.value)" type="submit" class="btn btn-primary">Search</button>
   </form>
-  
 
-  <div class="col-sm-8">
-      <div>
-        <div *ngIf="itemData">
-          <h2>Name: {{itemData.name}}</h2>
-          <h4>Description: {{itemData.description}}</h4>
-        </div>
-      </div>
-    </div>
+
+  <div class="row bg-light mt-4 p-4">
+    <ul *ngFor="let i of item">
+      <li >{{i.name}}, {{i.description}}</li>
+    </ul>
   </div>
+</div>

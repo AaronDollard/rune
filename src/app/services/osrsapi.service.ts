@@ -23,8 +23,8 @@ export class OsrsApiService {
     );
   }
 
-  private handleError(err:HttpErrorResponse) {
-  console.log('OsrsApiService: ' + err.message);
-  return Observable.throw(err.message)
+  private handleError(error:HttpErrorResponse) {
+  console.log('OsrsApiService: ' + error.message);
+  return Observable.throw(error.message)
   }
 }

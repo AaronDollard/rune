@@ -10,21 +10,20 @@ import { OSRSItemResponse } from './osrsresponse';
 })
 
 export class AppComponent {
-  itemData:OSRSItemResponse;
-  errorMessage:any;
-  item = [];
+  item:any;
+  errorMessage:any
 
   constructor (private _osrsService:OsrsApiService){
-
+    
   }
 
   getItemDetails(itemName:string) : boolean {
     this._osrsService.getItemData(itemName).subscribe(
       data => {
-        this.itemData=data
-        console.log('Item name: ' + this.itemData.name);
+        this.item = data
+        console.log('Item: ' + this.item.name);
       },
-      error => this.errorMessage ="Can not find item"
+      error => this.errorMessage = <any>error
     );
   return false    
   }
