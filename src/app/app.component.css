@@ -79,6 +79,7 @@ body, html {
   }
 
   .paragraph {
+      clear: both;
     color: black;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 16px;
@@ -89,11 +90,23 @@ body, html {
     font-size: medium;
     text-align: center;
   }
-
   .page-foot {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+    color: white;
+    position: absolute;
+    padding-top: 10px;
   }
+
+  .button {
+    background-image: url("https://www.runescape.com/img/rsp777/splash/compare_users.gif");
+    background-position: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top;
+    background-size: 100%;
+    height: 30px;
+  }
+
+  input[type="text"]::placeholder {  
+    text-align: center; 
+}

@@ -14,21 +14,22 @@
     <div class="main">
       <div class="content">
         <h1 class="title">Welcome to RuneScape - Item Finder</h1>
-        <p class="paragraph">Below you can enter the name of any item you wish to find out more about in the world of RuneScape. From feathers to Dragon armour, start exploring the content found within the world of Gielinor!</p>
+        <p class="paragraph">Below you can enter the name of any item you wish to find out more about in the world of
+          RuneScape. From feathers to dragon armour, start exploring the content found within the world of Gielinor!</p>
 
         <div class="item-form">
-        <form>
-          <div class="form-group">
-            <input type="text" name="item-name" class="form-group" #itemName placeholder="Search Items">
-          </div>
-          <button (click)="getItemDetails(itemName.value)" type="submit" class="btn btn-primary">Search</button>
-        </form>
-      </div>
+          <form>          
+              <div class="form-group" style="display: inline;">
+                <input type="text" name="item-name" class="form-group" #itemName placeholder="Search items">
+              </div>
 
-        <div *ngFor="let i of item | keyvalue">
+              <button (click)="getItemDetails(itemName.value)" type="submit" class="button" style="display: inline;">Search</button>
+          </form>
+        </div>
+
+        <div class="paragraph" *ngFor="let i of item | keyvalue" style="padding-top: 20px;">
           <ul>
-            <li>{{i.key}}</li>
-            <li>{{i.value}}</li>
+            <li>{{i.key}} {{i.value}}</li>
           </ul>
         </div>
       </div>
@@ -39,4 +40,5 @@
     <footer class="page-foot"> Aario RuneLite API</footer>
   </div>
 </body>
+
 </html>
