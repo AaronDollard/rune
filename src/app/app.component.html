@@ -25,7 +25,7 @@
         </form>
       </div>
 
-        <div class="row bg-light mt-4 p-4" *ngFor="let i of item | keyvalue">
+        <div *ngFor="let i of item | keyvalue">
           <ul>
             <li>{{i.key}}</li>
             <li>{{i.value}}</li>
