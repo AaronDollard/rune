@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OsrsApiService } from './services/osrsapi.service';
-import { OSRSItemResponse } from './osrsresponse';
+import { OSRSitem } from './osrsresponse';
 
 @Component({
   selector: 'app-root',
@@ -10,21 +10,24 @@ import { OSRSItemResponse } from './osrsresponse';
 })
 
 export class AppComponent {
-  item:any;
-  errorMessage:any
+  item: OSRSitem[]
+  errorMessage: any
 
-  constructor (private _osrsService:OsrsApiService){
-    
+  constructor(private _osrsService: OsrsApiService) {
   }
 
-  getItemDetails(itemName:string) : boolean {
-    this._osrsService.getItemData(itemName).subscribe(
-      data => {
-        this.item = data
-        console.log('Item: ' + this.item.name);
-      },
-      error => this.errorMessage = <any>error
-    );
-  return false    
+  ngOnInit() {
+  }
+
+  getItemDetails(itemName: string): boolean {
+    this._osrsService.getItemData(itemName).subscribe
+      (
+        data => {
+          this.item = data
+          console.log(data);
+        },
+        error => this.errorMessage = <any>error
+      );
+    return false
   }
 }

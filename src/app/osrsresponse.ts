@@ -1,5 +1,5 @@
-export interface OSRSItemResponse {
-id:Int32Array;
+export interface OSRSitem {
+id:number;
 name:string;
 description:string;
 type:string;
