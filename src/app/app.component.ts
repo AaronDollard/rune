@@ -12,6 +12,7 @@ import { OSRSitem } from './osrsresponse';
 export class AppComponent {
   item: OSRSitem[]
   errorMessage: any
+  objectKeys = Object.keys;
 
   constructor(private _osrsService: OsrsApiService) {
   }

@@ -6,7 +6,6 @@
   <meta name="author" content="RuneScape">
 </head>
 
-
 <body>
   <div class="background_pillar">
     <header class="banner"></header>
@@ -18,18 +17,19 @@
           RuneScape. From feathers to dragon armour, start exploring the content found within the world of Gielinor!</p>
 
         <div class="item-form">
-          <form>          
-              <div class="form-group" style="display: inline;">
-                <input type="text" name="item-name" class="form-group" #itemName placeholder="Search items">
-              </div>
+          <form>
+            <div class="form-group" style="display: inline;">
+              <input type="text" name="item-name" class="form-group" #itemName placeholder="Search items">
+            </div>
 
-              <button (click)="getItemDetails(itemName.value)" type="submit" class="button" style="display: inline;">Search</button>
+            <button (click)="getItemDetails(itemName.value)" type="submit" class="button"
+              style="display: inline;">Search</button>
           </form>
         </div>
 
-        <div class="paragraph" *ngFor="let i of item | keyvalue" style="padding-top: 20px;">
+        <div class="paragraph" *ngFor="let key of objectKeys(item)" style="padding-top: 20px;">
           <ul>
-            <li>{{i.key}} {{i.value}}</li>
+            <li *ngFor='let obj of item[key]'> {{obj.name}} - {{obj.description}} </li>
           </ul>
         </div>
       </div>
