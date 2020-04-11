@@ -29,7 +29,7 @@
 
         <div class="paragraph" *ngFor="let key of objectKeys(item)" style="padding-top: 20px;">
           <ul>
-            <li *ngFor='let obj of item[key]'> {{obj.name}} - {{obj.description}} </li>
+            <li class="results" *ngFor='let obj of item[key]'> {{obj.name}} - {{obj.description}} </li>
           </ul>
         </div>
       </div>

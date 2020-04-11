@@ -110,3 +110,7 @@ body, html {
   input[type="text"]::placeholder {  
     text-align: center; 
 }
+
+.results {
+  text-align: left;
+}
