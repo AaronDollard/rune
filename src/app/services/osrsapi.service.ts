@@ -8,15 +8,16 @@ import { OSRSitem } from '../osrsresponse';
 @Injectable({
   providedIn: 'root'
 })
-
+//In this service I say what I want to do when communicating with the RestAPI and what to do
+//with the results of that request
 export class OsrsApiService {
 
-  private _url: string = "https://api.runelite.net/runelite-1.6.10.1/item/search?query="
+  private _url: string = "https://api.osrsbox.com/"
   constructor(private _http: HttpClient) { }
 
   //Writes the items as one object or string into the console.log
   public getItemData(itemName): Observable<OSRSitem[]> {
-    return this._http.get<OSRSitem[]>(this._url + itemName)
+    return this._http.get<OSRSitem[]>(this._url + 'items?where={ "name":"' + itemName +'" , "duplicate": false}')
     .pipe(
       tap(data => console.log(JSON.stringify(data))
       ),
